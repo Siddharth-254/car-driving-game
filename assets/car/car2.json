@@ -1,0 +1,137 @@
+{
+    "mainBody": "carbody",
+    "image":["wheel1", "wheel2", "carbody"],
+    "joint":["j11", "j21"],
+    "processKey":{
+        "left":{
+            "isDown": {
+                "wheel1": {
+                    "torque": -0.15
+                },
+                "carbody": {
+                    "torque": 0.0175
+                }
+            }
+        },
+        "right":{
+            "isDown": {
+                "wheel1": {
+                    "torque": 0.15
+                },
+                "carbody": {
+                    "torque": -0.0175
+                }
+            }
+        }
+    },
+
+    "j11": {
+        "bodyA": "wheel1",
+        "bodyB": "carbody",
+        "length": 0,
+        "stiffness": 1,
+        "damping": 0.1,
+        "pointB": {"x": -50, "y": 10}
+    },
+    "j21": {
+        "bodyA": "wheel2",
+        "bodyB": "carbody",
+        "length": 0,
+        "stiffness": 0.5,
+        "damping": 0.1,
+        "pointB": {"x": 80, "y": 10}
+    },
+    "wheel1": {
+        "depth": 0,
+        "x": 0,
+        "y": 0,
+        "image": "racing_wheel.png",
+        "type": "fromPhysicsEditor",
+        "label": "wheel",
+        "isStatic": false,
+        "density": 0.01,
+        "restitution": 0.0,
+        "friction": 50.0,
+        "frictionAir": 0.01,
+        "frictionStatic": 0.0,
+        "collisionFilter": {
+            "group": 0,
+            "category": 1,
+            "mask": 4294967279
+        },
+        "fixtures": [
+            {
+                "label": "",
+                "isSensor": false,
+                "circle": {
+                    "x": 15.0,
+                    "y": 15.0,
+                    "radius": 20.0
+                }
+            }
+        ]
+    },
+    "wheel2": {
+        "depth": 0,
+        "x": 150,
+        "y": 0,
+        "image": "small_wheel.png",
+        "type": "fromPhysicsEditor",
+        "label": "wheel",
+        "isStatic": false,
+        "density": 0.01,
+        "restitution": 0.9,
+        "friction": 0.5,
+        "frictionAir": 0.01,
+        "frictionStatic": 0.0,
+        "collisionFilter": {
+            "group": 0,
+            "category": 1,
+            "mask": 4294967279
+        },
+        "fixtures": [
+            {
+                "label": "",
+                "isSensor": false,
+                "circle": {
+                    "x": 15.5,
+                    "y": 15.5,
+                    "radius": 15.5
+                }
+            }
+        ]
+    },
+    "carbody": {
+        "depth": -1,
+        "x": 75,
+        "y": 0,
+        "image": "car_body_2.png",
+		"type": "fromPhysicsEditor",
+		"label": "car_body",
+		"isStatic": false,
+		"density": 10,
+		"restitution": 0.2,
+		"friction": 0.01,
+		"frictionAir": 0.01,
+		"frictionStatic": 0.01,
+		"collisionFilter": {
+			"group": 0,
+			"category": 16,
+			"mask": 4294967295
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":0, "y":31 }, { "x":0, "y":44 }, { "x":12, "y":39 } ],
+					[ { "x":43, "y":10 }, { "x":42, "y":7 }, { "x":5, "y":0 }, { "x":35, "y":13 } ],
+					[ { "x":0, "y":7 }, { "x":24, "y":26 }, { "x":35, "y":13 }, { "x":5, "y":0 } ],
+					[ { "x":35, "y":13 }, { "x":24, "y":26 }, { "x":72, "y":23 }, { "x":63, "y":15 } ],
+					[ { "x":24, "y":26 }, { "x":12, "y":39 }, { "x":140, "y":50 }, { "x":150, "y":38 }, { "x":72, "y":23 } ],
+					[ { "x":12, "y":39 }, { "x":0, "y":44 }, { "x":140, "y":50 } ]
+				]
+			}
+		]
+	}
+}
